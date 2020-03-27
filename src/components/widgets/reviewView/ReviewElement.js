@@ -21,10 +21,17 @@ const ReviewElement = ({ element }) => {
     case 'link':
       renderItem = (
         <p>
-          <a target="blank" href={element.data.value}>
+          <a target='blank' href={element.data.value}>
             {element.data.linkName}
           </a>
         </p>
+      );
+      break;
+    case 'code':
+      renderItem = (
+        <pre>
+          <code>{element.data.value}</code>
+        </pre>
       );
       break;
   }

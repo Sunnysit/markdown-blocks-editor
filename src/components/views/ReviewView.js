@@ -24,16 +24,9 @@ const ReviewView = () => {
   });
 
   return (
-    <article className="review-view view" style={styles.container}>
+    <article className='review-view view' style={styles.container}>
       <HeaderMenu />
-      <div className="markdown-body">
-        <h1>Unicorns</h1>
-        <p>All the things</p>
-        <pre>
-          <code>$ yarn</code>
-        </pre>
-        {renderMarkdownList}
-      </div>
+      <div className='markdown-body'>{renderMarkdownList}</div>
     </article>
   );
 };

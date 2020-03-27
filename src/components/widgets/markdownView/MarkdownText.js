@@ -32,6 +32,17 @@ const MarkdownText = ({ element }) => {
         return output;
       case 'link':
         return `[${element.data.linkName}](${element.data.value})`;
+
+      case 'code':
+        return (
+          <>
+            <span>```{element.data.codeType}</span>
+            <pre className='code-block'>
+              <code>{element.data.value}</code>
+            </pre>
+            <span>```</span>
+          </>
+        );
     }
   };
 

@@ -6,12 +6,14 @@ import BasicElementLayout from '../widgets/editView/elements/BasicElementLayout'
 import HeadingElement from '../widgets/editView/elements/HeadingElement';
 import TextElement from '../widgets/editView/elements/TextElement';
 import LinkElement from '../widgets/editView/elements/LinkElement';
+import CodeElement from '../widgets/editView/elements/CodeElement';
 
 //Font Awesome icons
 import {
   faLink,
   faParagraph,
-  faHeading
+  faHeading,
+  faCode
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -80,6 +82,22 @@ const EditView = () => {
               title='Paragraph'
             >
               <TextElement value={item.data.value} sid={item.sid} />
+            </BasicElementLayout>
+          );
+          break;
+        case 'code':
+          element = (
+            <BasicElementLayout
+              sid={item.sid}
+              index={index}
+              icon={faCode}
+              title='Code'
+            >
+              <CodeElement
+                codeType={item.data.codeType}
+                value={item.data.value}
+                sid={item.sid}
+              />
             </BasicElementLayout>
           );
           break;

@@ -21,7 +21,9 @@ const elementBtns = [
   {
     type: 'code',
     text: 'Code',
-    defaultValue: ''
+    defaultValue: `function hello() {
+      console.log('Hello World!');
+    }`
   }
 ];
 
@@ -39,8 +41,8 @@ const HeaderMenu = () => {
   });
 
   return (
-    <div className="edit-view-header">
-      <ul className="element-option-list">{renderElementsButtons}</ul>
+    <div className='edit-view-header'>
+      <ul className='element-option-list'>{renderElementsButtons}</ul>
     </div>
   );
 };

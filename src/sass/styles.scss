@@ -318,9 +318,9 @@ $light-color:#B1D8D4;
 
 .markdown-text-container {
     margin-top: 2rem;
-    background-color: white;
+    background-color: $background-color;
     border-radius: 5px;
-    width: 600px;
+    width: 80vw;
     max-width: 980px;
     z-index: 11;
 
@@ -335,10 +335,17 @@ $light-color:#B1D8D4;
     }
 
     .output-markdown {
-        background-color: $background-color;
+        background-color: white;
         border-radius: 5px;
         margin: .5rem;
         padding: 1rem;
+        max-height: 70vh;
+        overflow: auto;
+    }
+
+    .code-block {
+        overflow: auto;
+        margin: 0;
     }
 }
 
