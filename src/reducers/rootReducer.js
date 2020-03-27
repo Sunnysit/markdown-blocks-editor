@@ -1,4 +1,5 @@
 const initState = {
+  showResultView: false,
   markdownList: [
     {
       type: 'heading',
@@ -22,6 +23,10 @@ const rootReducer = (state = initState, action) => {
   let newMarkdownList = [];
 
   switch (action.type) {
+    case 'TOGGLE_RESULT_VIEW':
+      return { ...state, showResultView: !state.showResultView };
+
+    //Actions for Manipulate Markdown List
     case 'RESET_LIST':
       return { ...state, markdownList: [] };
     case 'ADD_ELEMENT':

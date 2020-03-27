@@ -259,8 +259,8 @@ $light-color:#B1D8D4;
         padding: .2rem .5rem;
         margin: 0 .2rem;
 
-        span {
-            margin-left: .2rem;
+        svg {
+            margin-right: .2rem;
         }
 
         &:hover {
@@ -301,11 +301,19 @@ $light-color:#B1D8D4;
 .output-markdown-window {
     width: 100vw;
     height: 100vh;
-    background-color: rgba($color: #000000, $alpha: 0.6);
+
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
+    .background-cover {
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+    }
 }
 
 .markdown-text-container {
@@ -314,9 +322,23 @@ $light-color:#B1D8D4;
     border-radius: 5px;
     width: 600px;
     max-width: 980px;
+    z-index: 11;
 
     .title {
         text-align: center;
+        margin-bottom: 0;
+    }
+
+    .description {
+        text-align: center;
+        margin: 0.5rem;
+    }
+
+    .output-markdown {
+        background-color: $background-color;
+        border-radius: 5px;
+        margin: .5rem;
+        padding: 1rem;
     }
 }
 

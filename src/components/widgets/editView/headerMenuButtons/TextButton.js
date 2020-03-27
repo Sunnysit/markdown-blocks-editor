@@ -64,7 +64,7 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addHeadingElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faHeading} />
-            {text}
+            <span>{text}</span>
           </button>
         );
       case 'paragraph':
@@ -74,7 +74,7 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addTextElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faParagraph} />
-            {text}
+            <span>{text}</span>
           </button>
         );
 
@@ -85,7 +85,7 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addLinkElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faLink} />
-            {text}
+            <span>{text}</span>
           </button>
         );
 
@@ -96,7 +96,7 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addLinkElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faCode} />
-            {text}
+            <span>{text}</span>
           </button>
         );
     }

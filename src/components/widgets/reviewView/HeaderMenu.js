@@ -13,6 +13,10 @@ const HeaderMenu = () => {
     }
   };
 
+  const handleExport = () => {
+    dispatch({ type: 'TOGGLE_RESULT_VIEW' });
+  };
+
   return (
     <div className="review-view-header">
       <ul className="option-list">
@@ -23,7 +27,7 @@ const HeaderMenu = () => {
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={handleExport}>
             <FontAwesomeIcon icon={faCheck} />
             <span>Export Markdown Text</span>
           </button>

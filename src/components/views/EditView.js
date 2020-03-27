@@ -44,13 +44,12 @@ const EditView = () => {
               sid={item.sid}
               index={index}
               icon={faHeading}
-              title="Heading"
+              title='Heading'
             >
               <HeadingElement
-                index={index}
                 value={item.data.value}
                 sid={item.sid}
-                type={item.type}
+                level={item.data.level}
               />
             </BasicElementLayout>
           );
@@ -61,7 +60,7 @@ const EditView = () => {
               sid={item.sid}
               index={index}
               icon={faLink}
-              title="Link"
+              title='Link'
             >
               <LinkElement
                 value={item.data.value}
@@ -78,7 +77,7 @@ const EditView = () => {
               sid={item.sid}
               index={index}
               icon={faParagraph}
-              title="Paragraph"
+              title='Paragraph'
             >
               <TextElement value={item.data.value} sid={item.sid} />
             </BasicElementLayout>
@@ -93,9 +92,9 @@ const EditView = () => {
   };
 
   return (
-    <article className="edit-view view" style={styles.container}>
+    <article className='edit-view view' style={styles.container}>
       <HeaderMenu />
-      <ul className="elements-list">{renderList()}</ul>
+      <ul className='elements-list'>{renderList()}</ul>
     </article>
   );
 };

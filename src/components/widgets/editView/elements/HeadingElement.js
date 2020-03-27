@@ -31,10 +31,10 @@ const HeadingElement = ({ sid, value, level }) => {
   };
 
   return (
-    <div className="main-content">
-      <div className="heading-input-group">
+    <div className='main-content'>
+      <div className='heading-input-group'>
         <select
-          className="heading-level-select"
+          className='heading-level-select'
           onChange={(e) => handleContentChange(e, 'level')}
           value={level}
         >
@@ -46,10 +46,10 @@ const HeadingElement = ({ sid, value, level }) => {
           <option value={6}>Heading 6</option>
         </select>
         <input
-          className="element-value-input"
+          className='element-value-input'
           onChange={(e) => handleContentChange(e, 'content')}
           value={value}
-          type="text"
+          type='text'
         />
       </div>
     </div>
