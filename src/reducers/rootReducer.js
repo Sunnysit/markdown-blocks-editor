@@ -1,10 +1,19 @@
 const initState = {
   markdownList: [
-    { type: 'h1', sid: 'zasAtvkC8', value: 'Heading 1' },
     {
-      type: 'p',
+      type: 'heading',
+      sid: 'zasAtvkC8',
+      data: {
+        value: 'Heading',
+        level: 1
+      }
+    },
+    {
+      type: 'paragraph',
       sid: '1VW0rHTVR',
-      value: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+      data: {
+        value: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
+      }
     }
   ]
 };
@@ -22,17 +31,7 @@ const rootReducer = (state = initState, action) => {
       };
     case 'CHANGE_ELEMENT_CONTENT':
       newMarkdownList = state.markdownList.map((item) => {
-        if (item.sid === action.payload.sid) item.value = action.payload.value;
-        return item;
-      });
-      return {
-        ...state,
-        markdownList: newMarkdownList
-      };
-    case 'CHANGE_LINK_NAME':
-      newMarkdownList = state.markdownList.map((item) => {
-        if (item.sid === action.payload.sid)
-          item.linkName = action.payload.linkName;
+        if (item.sid === action.payload.sid) item.data = action.payload.data;
         return item;
       });
       return {

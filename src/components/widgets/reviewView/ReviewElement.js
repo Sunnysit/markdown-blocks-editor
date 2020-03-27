@@ -1,37 +1,28 @@
 import React from 'react';
 
+import HeadingElement from './elements/HeadingElement';
+
 const ReviewElement = ({ element }) => {
   let renderItem;
 
   switch (element.type) {
     default:
       break;
-    case 'h1':
-      renderItem = <h1>{element.value}</h1>;
+    case 'heading':
+      renderItem = (
+        <HeadingElement level={element.data.level}>
+          {element.data.value}
+        </HeadingElement>
+      );
       break;
-    case 'h2':
-      renderItem = <h2>{element.value}</h2>;
-      break;
-    case 'h3':
-      renderItem = <h3>{element.value}</h3>;
-      break;
-    case 'h4':
-      renderItem = <h4>{element.value}</h4>;
-      break;
-    case 'h5':
-      renderItem = <h5>{element.value}</h5>;
-      break;
-    case 'h6':
-      renderItem = <h6>{element.value}</h6>;
-      break;
-    case 'p':
-      renderItem = <p>{element.value}</p>;
+    case 'paragraph':
+      renderItem = <p>{element.data.value}</p>;
       break;
     case 'link':
       renderItem = (
         <p>
-          <a target="blank" href={element.value}>
-            {element.linkName}
+          <a target="blank" href={element.data.value}>
+            {element.data.linkName}
           </a>
         </p>
       );
