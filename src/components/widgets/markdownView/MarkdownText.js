@@ -48,6 +48,25 @@ const MarkdownText = ({ element }) => {
 
       case 'img':
         return `![${element.data.alt}](${element.data.value})`;
+
+      case 'list':
+        return element.data.listType === 'ul' ? (
+          <>
+            {element.data.value.map((item, index) => {
+              return <div key={index}>* {item}</div>;
+            })}
+          </>
+        ) : (
+          <>
+            {element.data.value.map((item, index) => {
+              return (
+                <div key={index}>
+                  {index + 1}. {item}
+                </div>
+              );
+            })}
+          </>
+        );
     }
   };
 

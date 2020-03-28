@@ -1,6 +1,7 @@
 import React from 'react';
 
 import HeadingElement from './elements/HeadingElement';
+import ListElement from './elements/ListElement';
 
 const PreviewElement = ({ element }) => {
   let renderItem;
@@ -40,6 +41,15 @@ const PreviewElement = ({ element }) => {
         <p>
           <img src={element.data.value} alt={element.data.alt} />
         </p>
+      );
+      break;
+
+    case 'list':
+      renderItem = (
+        <ListElement
+          listType={element.data.listType}
+          items={element.data.value}
+        />
       );
       break;
   }

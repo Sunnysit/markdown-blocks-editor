@@ -19,6 +19,11 @@ const elementBtns = [
     defaultValue: ''
   },
   {
+    type: 'list',
+    text: 'List',
+    defaultValue: 'ul'
+  },
+  {
     type: 'code',
     text: 'Code',
     defaultValue: `function hello() {

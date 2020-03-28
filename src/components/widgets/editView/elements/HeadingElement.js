@@ -50,6 +50,7 @@ const HeadingElement = ({ sid, value, level }) => {
           onChange={(e) => handleContentChange(e, 'content')}
           value={value}
           type='text'
+          placeholder='Title goes here...'
         />
       </div>
     </div>

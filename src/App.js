@@ -15,7 +15,7 @@ toast.configure({
 function App() {
   return (
     <div className='app'>
-      <Header />
+      {/* <Header /> */}
       <Body />
       <Footer />
     </div>

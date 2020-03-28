@@ -40,6 +40,17 @@ $light-color: #b1d8d4;
 
 /*=====  End of Color Theme  ======*/
 
+
+/*=============================================
+=            Dimension            =
+=============================================*/
+$container-height:85vh;
+
+
+/*=====  End of Dimension  ======*/
+
+
+
 /*=============================================
   =            Main Style            =
   =============================================*/
@@ -98,6 +109,7 @@ $light-color: #b1d8d4;
 
 .element-option-list {
   display: flex;
+  flex-wrap: wrap;
 
   .element-btn {
     display: block;
@@ -106,7 +118,7 @@ $light-color: #b1d8d4;
     color: white;
     background-color: $primary-color;
     padding: 0.2rem 0.5rem;
-    margin: 0 0.2rem;
+    margin: 0 0.2rem .2rem;
 
     svg {
       margin-right: 0.2rem;
@@ -121,6 +133,8 @@ $light-color: #b1d8d4;
 .elements-list {
   padding: 0.5rem;
   margin: 0;
+  max-height: $container-height;
+  overflow: auto;
 }
 
 .element-container {
@@ -198,6 +212,7 @@ $light-color: #b1d8d4;
     .main-content {
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       padding: 0.2rem 0.5rem;
       background-color: $background-color;
       border-bottom-left-radius: 10px;
@@ -276,6 +291,56 @@ $light-color: #b1d8d4;
       .uri-input-group {
         width: 100%;
       }
+
+      //List Element style
+      .list-radio-input-group {
+        display: block;
+        width: 100%;
+      }
+
+      .list-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          margin-left: 1rem;
+        }
+      }
+
+      .ul-style {
+        list-style: disc;
+      }
+
+      .ol-style {
+        list-style: decimal;
+      }
+
+      .list-item-input {
+        width: 96%;
+        padding: 0.5rem;
+        margin: 0.5rem 0 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      .delete-list-item-btn {
+        margin-left: 0.5rem;
+      }
+
+      .add-list-item-btn {
+        color: $primary-color;
+        font-size: 1.3rem;
+        display: block;
+        margin: 0.2rem auto;
+
+        &:hover {
+          color: $accent-color;
+        }
+      }
     }
   }
 }
@@ -293,7 +358,11 @@ $light-color: #b1d8d4;
   .option-list {
     display: flex;
     justify-content: flex-end;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0 .2rem .2rem;
+    }
   }
 
   .empty-btn {
@@ -330,6 +399,12 @@ $light-color: #b1d8d4;
     max-width: 980px; */
   margin: 0 auto;
   padding: 45px;
+  max-height: $container-height;
+  overflow: auto;
+
+  ul {
+    list-style-type: disc;
+  }
 }
 
 @media (max-width: 767px) {
@@ -432,6 +507,13 @@ header {
 =============================================*/
 .footer {
   text-align: center;
+  background-color: $primary-color;
+  color: white;
+
+  .description {
+    margin: .3rem;
+    font-size: 0.8rem;
+  }
 }
 
 /*=====  End of Footer Style  ======*/

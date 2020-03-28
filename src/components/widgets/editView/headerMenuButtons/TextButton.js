@@ -8,7 +8,8 @@ import {
   faParagraph,
   faLink,
   faCode,
-  faImage
+  faImage,
+  faList
 } from '@fortawesome/free-solid-svg-icons';
 
 const TextButton = ({ type, text, defaultValue }) => {
@@ -54,6 +55,7 @@ const TextButton = ({ type, text, defaultValue }) => {
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
   };
 
+  //Function for code element
   const addCodeElement = (elementType, defaultValue = '') => {
     const newElement = {
       type: elementType,
@@ -67,6 +69,7 @@ const TextButton = ({ type, text, defaultValue }) => {
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
   };
 
+  //Function for image element
   const addImageElement = (elementType, defaultValue = {}) => {
     const newElement = {
       type: elementType,
@@ -74,6 +77,20 @@ const TextButton = ({ type, text, defaultValue }) => {
       data: {
         value: defaultValue.uri,
         alt: defaultValue.alt
+      }
+    };
+
+    dispatch({ type: 'ADD_ELEMENT', payload: newElement });
+  };
+
+  //Function for image element
+  const addListElement = (elementType, defaultValue = 'ul') => {
+    const newElement = {
+      type: elementType,
+      sid: shortid.generate(),
+      data: {
+        value: [''],
+        listType: defaultValue
       }
     };
 
@@ -133,6 +150,17 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addImageElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faImage} />
+            <span>{text}</span>
+          </button>
+        );
+
+      case 'list':
+        return (
+          <button
+            className='element-btn'
+            onClick={() => addListElement(type, defaultValue)}
+          >
+            <FontAwesomeIcon icon={faList} />
             <span>{text}</span>
           </button>
         );

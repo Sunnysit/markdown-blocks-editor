@@ -8,6 +8,7 @@ import TextElement from '../widgets/editView/elements/TextElement';
 import LinkElement from '../widgets/editView/elements/LinkElement';
 import CodeElement from '../widgets/editView/elements/CodeElement';
 import ImgElement from '../widgets/editView/elements/ImgElement';
+import ListElement from '../widgets/editView/elements/ListElement';
 
 //Font Awesome icons
 import {
@@ -15,7 +16,8 @@ import {
   faParagraph,
   faHeading,
   faCode,
-  faImage
+  faImage,
+  faList
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -119,6 +121,24 @@ const EditView = () => {
               />
             </BasicElementLayout>
           );
+          break;
+
+        case 'list':
+          element = (
+            <BasicElementLayout
+              sid={item.sid}
+              index={index}
+              icon={faList}
+              title='List'
+            >
+              <ListElement
+                listType={item.data.listType}
+                value={item.data.value}
+                sid={item.sid}
+              />
+            </BasicElementLayout>
+          );
+          break;
       }
 
       return <li key={item.sid}>{element}</li>;
