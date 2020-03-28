@@ -36,7 +36,9 @@ const MarkdownText = ({ element }) => {
       case 'code':
         return (
           <>
-            <span>```{element.data.codeType}</span>
+            <span>
+              ```{element.data.codeType && element.data.codeType.toLowerCase()}
+            </span>
             <pre className='code-block'>
               <code>{element.data.value}</code>
             </pre>

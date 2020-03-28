@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ReviewElement from '../widgets/reviewView/ReviewElement';
+import PreviewElement from '../widgets/reviewView/PreviewElement';
 import HeaderMenu from '../widgets/reviewView/HeaderMenu';
 
 //Github Markdown Style
@@ -14,13 +14,13 @@ const styles = {
   }
 };
 
-const ReviewView = () => {
+const PreviewView = () => {
   const markdownList = useSelector((state) => state.markdownList);
 
   console.log(markdownList);
 
   const renderMarkdownList = markdownList.map((item) => {
-    return <ReviewElement key={item.sid} element={item} />;
+    return <PreviewElement key={item.sid} element={item} />;
   });
 
   return (
@@ -31,4 +31,4 @@ const ReviewView = () => {
   );
 };
 
-export default ReviewView;
+export default PreviewView;

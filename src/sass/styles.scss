@@ -2,376 +2,431 @@
 =            General Style            =
 =============================================*/
 * {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 ul {
-    margin-left: 0;
-    padding-left: 0;
-    list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 button {
-    all: unset;
-    cursor: pointer;
+  all: unset;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /*=====  End of General Style  ======*/
 
-
 /*=============================================
 =            Color Theme            =
 =============================================*/
-$primary-color: #06A77D;
-$accent-color:#F7B32B;
-$background-color: #E7ECEF;
-$light-color:#B1D8D4;
-
+$primary-color: #06a77d;
+$accent-color: #f7b32b;
+$background-color: #e7ecef;
+$light-color: #b1d8d4;
 
 /*=====  End of Color Theme  ======*/
-
-
 
 /*=============================================
   =            Main Style            =
   =============================================*/
 .app {
-    max-height: 100vh;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .view {
-    // max-height: 100%;
+  // max-height: 100%;
 
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 .hide {
-    display: none !important;
+  display: none !important;
+}
+
+.btn {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  color: white;
+
+  &:hover {
+    background-color: $accent-color;
+    color: white;
+  }
+
+  svg {
+    margin-right: 0.2rem;
+  }
+}
+
+.success-toast {
+  background-color: $primary-color !important;
+  border-radius: 5px !important;
 }
 
 /*=====  End of Main Style  ======*/
-
 
 /*=============================================
   =            EditView Style            =
   =============================================*/
 .edit-view-header {
-    background-color: $background-color;
-    max-width: 100%;
-    padding: .5rem;
+  background-color: $background-color;
+  max-width: 100%;
+  padding: 0.5rem;
 }
 
 .element-option-list {
+  display: flex;
 
-    display: flex;
+  .element-btn {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: $primary-color;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
 
-
-    .element-btn {
-        display: block;
-        text-align: center;
-        border-radius: 5px;
-        color: white;
-        background-color: $primary-color;
-        padding: .2rem .5rem;
-        margin: 0 .2rem;
-
-        svg {
-            margin-right: .2rem;
-        }
-
-        &:hover {
-            background-color: $accent-color;
-        }
+    svg {
+      margin-right: 0.2rem;
     }
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
 }
 
 .elements-list {
-    padding: .5rem;
-    margin: 0;
+  padding: 0.5rem;
+  margin: 0;
 }
 
 .element-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  .order-handlers {
+    width: 5%;
     display: flex;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    justify-content: center;
 
-    .order-handlers {
-        width: 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .element-index {
-            text-align: center;
-            padding: .2rem;
-            border-radius: 5px;
-            font-size: .8rem;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .order-handle-btn {
-            background-color: $background-color;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: .2rem;
-            border-radius: 5px;
-
-            &:hover {
-                background-color: $accent-color;
-                color: white;
-            }
-        }
+    .element-index {
+      text-align: center;
+      padding: 0.2rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      display: block;
+      margin: 0 auto;
     }
 
-    .element-info-container {
-        width: 95%;
+    .order-handle-btn {
+      background-color: $background-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.2rem;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $accent-color;
+        color: white;
+      }
+    }
+  }
+
+  .element-info-container {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $primary-color;
+      padding: 0.2rem 0.5rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .element-type {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .delete-btn {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      color: white;
+    }
+
+    .main-content {
+      width: 100%;
+      display: flex;
+      padding: 0.2rem 0.5rem;
+      background-color: $background-color;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      //Heading Element style
+      .heading-input-group {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .heading-level-select {
+          padding: 0.5rem;
+          margin: 8px 8px 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 1rem;
+        }
+      }
+
+      //Text Element style
+      .element-value-input {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      //Link Element style
+      .input-group {
+        display: flex;
+        align-items: center;
+        width: 50%;
+      }
+
+      .link-value-input {
+        flex: 1;
+        padding: 0.5rem;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        margin-right: 0.5rem;
+      }
+
+      //Code Element style
+      .code-input-container {
         display: flex;
         flex-wrap: wrap;
 
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $primary-color;
-            padding: .2rem .5rem;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        width: 100%;
 
+        .input-group {
+          width: 100%;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
         }
 
-        .element-type {
-            margin: .2rem 0;
-            font-size: 1rem;
-            color: white;
-            font-weight: bold;
-
-            span {
-                margin-left: .5rem;
-            }
+        .code-type-value-input {
+          width: 150px;
+          font-size: 12px;
+          margin: 0;
         }
-
-        .delete-btn {
-            width: 1rem;
-            height: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            color: white;
-
-        }
-
-        .main-content {
-            width: 100%;
-            display: flex;
-            padding: .5rem;
-            background-color: $background-color;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-
-            //Heading Element style
-            .heading-input-group {
-                display: flex;
-                align-items: center;
-                width: 100%;
-
-                .heading-level-select {
-                    padding: .5rem;
-                    margin: 8px 8px 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                    font-size: 1rem;
-                }
-            }
-
-
-            //Text Element style
-            .element-value-input {
-                width: 100%;
-                padding: .5rem;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 1rem;
-            }
-
-            //Link Element style
-            .input-group {
-                display: flex;
-                align-items: center;
-                width: 50%;
-            }
-
-            .link-value-input {
-                flex: 1;
-                padding: .5rem;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 1rem;
-                margin-right: .5rem;
-            }
-        }
+      }
     }
-
+  }
 }
 
 /*=====  End of EditView Style  ======*/
-
 
 /*=============================================
 =            Review View Style            =
 =============================================*/
 .review-view-header {
-    background-color: $background-color;
-    max-width: 100%;
-    padding: .5rem;
+  background-color: $background-color;
+  max-width: 100%;
+  padding: 0.5rem;
 
-    .option-list {
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: nowrap;
+  .option-list {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .empty-btn {
+    background-color: #ccc;
+  }
+
+  button {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: $primary-color;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
+
+    svg {
+      margin-right: 0.2rem;
     }
 
-    .empty-btn {
-        background-color: #ccc;
+    &:hover {
+      background-color: $accent-color;
     }
-
-    button {
-        display: block;
-        text-align: center;
-        border-radius: 5px;
-        color: white;
-        background-color: $primary-color;
-        padding: .2rem .5rem;
-        margin: 0 .2rem;
-
-        svg {
-            margin-right: .2rem;
-        }
-
-        &:hover {
-            background-color: $accent-color;
-        }
-    }
+  }
 }
 
-
 /*=====  End of Review View Style  ======*/
-
-
 
 /*=============================================
   =            Github Markdown Style            =
   =============================================*/
 .markdown-body {
-    box-sizing: border-box;
-    /* min-width: 200px;
+  box-sizing: border-box;
+  /* min-width: 200px;
     max-width: 980px; */
-    margin: 0 auto;
-    padding: 45px;
+  margin: 0 auto;
+  padding: 45px;
 }
 
 @media (max-width: 767px) {
-    .markdown-body {
-        padding: 15px;
-    }
+  .markdown-body {
+    padding: 15px;
+  }
 }
 
-
 /*=====  End of Github Markdown Style  ======*/
-
 
 /*=============================================
 =            Markdown View Style            =
 =============================================*/
 .output-markdown-window {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .background-cover {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    position: absolute;
     width: 100vw;
     height: 100vh;
-
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    .background-cover {
-        background-color: rgba($color: #000000, $alpha: 0.6);
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: 10;
-    }
+    z-index: 10;
+  }
 }
 
 .markdown-text-container {
-    margin-top: 2rem;
-    background-color: $background-color;
+  margin-top: 2rem;
+  background-color: $background-color;
+  border-radius: 5px;
+  width: 80vw;
+  max-width: 980px;
+  z-index: 11;
+
+  .title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .description {
+    text-align: center;
+    margin: 0.5rem;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .output-markdown {
+    background-color: white;
     border-radius: 5px;
-    width: 80vw;
-    max-width: 980px;
-    z-index: 11;
+    margin: 0.5rem;
+    padding: 1rem;
+    max-height: 70vh;
+    overflow: auto;
+    z-index: 10;
+  }
 
-    .title {
-        text-align: center;
-        margin-bottom: 0;
-    }
+  .code-block {
+    overflow: auto;
+    margin: 0;
+  }
 
-    .description {
-        text-align: center;
-        margin: 0.5rem;
-    }
-
-    .output-markdown {
-        background-color: white;
-        border-radius: 5px;
-        margin: .5rem;
-        padding: 1rem;
-        max-height: 70vh;
-        overflow: auto;
-    }
-
-    .code-block {
-        overflow: auto;
-        margin: 0;
-    }
+  .clipboard-area {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+  }
 }
 
 /*=====  End of Markdown View Style  ======*/
-
-
 
 /*=============================================
 =            Header Style            =
 =============================================*/
 header {
-    background-color: $primary-color;
-    color: white;
+  background-color: $primary-color;
+  color: white;
 }
 
-
 /*=====  End of Header Style  ======*/
-
-
 
 /*=============================================
 =            Footer Style            =
 =============================================*/
 .footer {
-    text-align: center;
+  text-align: center;
 }
-
 
 /*=====  End of Footer Style  ======*/

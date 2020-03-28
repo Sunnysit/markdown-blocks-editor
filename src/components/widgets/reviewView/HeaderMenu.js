@@ -18,10 +18,10 @@ const HeaderMenu = () => {
   };
 
   return (
-    <div className="review-view-header">
-      <ul className="option-list">
+    <div className='review-view-header'>
+      <ul className='option-list'>
         <li>
-          <button onClick={handleEmpty} className="empty-btn">
+          <button onClick={handleEmpty} className='empty-btn'>
             <FontAwesomeIcon icon={faTrashAlt} />
             <span>Empty</span>
           </button>
@@ -29,7 +29,7 @@ const HeaderMenu = () => {
         <li>
           <button onClick={handleExport}>
             <FontAwesomeIcon icon={faCheck} />
-            <span>Export Markdown Text</span>
+            <span>Done & Export</span>
           </button>
         </li>
       </ul>

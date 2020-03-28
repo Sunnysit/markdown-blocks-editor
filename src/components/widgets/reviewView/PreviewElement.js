@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeadingElement from './elements/HeadingElement';
 
-const ReviewElement = ({ element }) => {
+const PreviewElement = ({ element }) => {
   let renderItem;
 
   switch (element.type) {
@@ -39,4 +39,4 @@ const ReviewElement = ({ element }) => {
   return <>{renderItem}</>;
 };
 
-export default ReviewElement;
+export default PreviewElement;

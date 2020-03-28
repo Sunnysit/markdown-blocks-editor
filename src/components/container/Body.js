@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ReviewView from '../views/ReviewView';
+import PreviewView from '../views/PreviewView';
 import EditView from '../views/EditView';
 
 const styles = {
@@ -15,7 +15,7 @@ const Body = () => {
   return (
     <main style={styles.mainContainer}>
       <EditView />
-      <ReviewView />
+      <PreviewView />
     </main>
   );
 };

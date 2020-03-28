@@ -50,6 +50,18 @@ const TextButton = ({ type, text, defaultValue }) => {
         linkName: 'Link'
       }
     };
+    dispatch({ type: 'ADD_ELEMENT', payload: newElement });
+  };
+
+  const addCodeElement = (elementType, defaultValue = '') => {
+    const newElement = {
+      type: elementType,
+      sid: shortid.generate(),
+      data: {
+        value: defaultValue,
+        codeType: ''
+      }
+    };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
   };
@@ -60,7 +72,7 @@ const TextButton = ({ type, text, defaultValue }) => {
       case 'heading':
         return (
           <button
-            className="element-btn"
+            className='element-btn'
             onClick={() => addHeadingElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faHeading} />
@@ -70,7 +82,7 @@ const TextButton = ({ type, text, defaultValue }) => {
       case 'paragraph':
         return (
           <button
-            className="element-btn"
+            className='element-btn'
             onClick={() => addTextElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faParagraph} />
@@ -81,7 +93,7 @@ const TextButton = ({ type, text, defaultValue }) => {
       case 'link':
         return (
           <button
-            className="element-btn"
+            className='element-btn'
             onClick={() => addLinkElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faLink} />
@@ -92,8 +104,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       case 'code':
         return (
           <button
-            className="element-btn"
-            onClick={() => addLinkElement(type, defaultValue)}
+            className='element-btn'
+            onClick={() => addCodeElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faCode} />
             <span>{text}</span>

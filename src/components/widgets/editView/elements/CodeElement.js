@@ -32,16 +32,23 @@ const CodeElement = ({ sid, value, codeType }) => {
 
   return (
     <div className='main-content'>
-      <div className='heading-input-group'>
-        <select
-          className='heading-level-select'
-          onChange={(e) => handleContentChange(e, 'code-type')}
-          value={codeType}
-        >
-          <option value='javascript'>JavaScript</option>
-          <option value='python'>Python</option>
-          <option value='java'>Java</option>
-        </select>
+      <div className='code-input-container'>
+        <div className='input-group'>
+          <label
+            className='code-type-value-input-label sr-only'
+            htmlFor='code-type-value-input'
+          >
+            Code Language&nbsp;
+          </label>
+          <input
+            name='code-type-value-input'
+            type='text'
+            className='code-type-value-input element-value-input'
+            onChange={(e) => handleContentChange(e, 'code-type')}
+            value={codeType}
+            placeholder='Code Language'
+          />
+        </div>
         <textarea
           rows={6}
           onChange={(e) => handleContentChange(e, 'content')}
