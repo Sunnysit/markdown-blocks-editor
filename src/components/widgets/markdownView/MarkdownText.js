@@ -45,6 +45,9 @@ const MarkdownText = ({ element }) => {
             <span>```</span>
           </>
         );
+
+      case 'img':
+        return `![${element.data.alt}](${element.data.value})`;
     }
   };
 

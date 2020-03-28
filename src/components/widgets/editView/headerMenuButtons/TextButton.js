@@ -7,7 +7,8 @@ import {
   faHeading,
   faParagraph,
   faLink,
-  faCode
+  faCode,
+  faImage
 } from '@fortawesome/free-solid-svg-icons';
 
 const TextButton = ({ type, text, defaultValue }) => {
@@ -66,6 +67,19 @@ const TextButton = ({ type, text, defaultValue }) => {
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
   };
 
+  const addImageElement = (elementType, defaultValue = {}) => {
+    const newElement = {
+      type: elementType,
+      sid: shortid.generate(),
+      data: {
+        value: defaultValue.uri,
+        alt: defaultValue.alt
+      }
+    };
+
+    dispatch({ type: 'ADD_ELEMENT', payload: newElement });
+  };
+
   const renderButton = () => {
     switch (type) {
       default:
@@ -108,6 +122,17 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addCodeElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faCode} />
+            <span>{text}</span>
+          </button>
+        );
+
+      case 'img':
+        return (
+          <button
+            className='element-btn'
+            onClick={() => addImageElement(type, defaultValue)}
+          >
+            <FontAwesomeIcon icon={faImage} />
             <span>{text}</span>
           </button>
         );

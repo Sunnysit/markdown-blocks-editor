@@ -7,13 +7,15 @@ import HeadingElement from '../widgets/editView/elements/HeadingElement';
 import TextElement from '../widgets/editView/elements/TextElement';
 import LinkElement from '../widgets/editView/elements/LinkElement';
 import CodeElement from '../widgets/editView/elements/CodeElement';
+import ImgElement from '../widgets/editView/elements/ImgElement';
 
 //Font Awesome icons
 import {
   faLink,
   faParagraph,
   faHeading,
-  faCode
+  faCode,
+  faImage
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = {
@@ -101,6 +103,22 @@ const EditView = () => {
             </BasicElementLayout>
           );
           break;
+
+        case 'img':
+          element = (
+            <BasicElementLayout
+              sid={item.sid}
+              index={index}
+              icon={faImage}
+              title='Image'
+            >
+              <ImgElement
+                alt={item.data.alt}
+                value={item.data.value}
+                sid={item.sid}
+              />
+            </BasicElementLayout>
+          );
       }
 
       return <li key={item.sid}>{element}</li>;

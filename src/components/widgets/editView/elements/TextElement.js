@@ -17,12 +17,13 @@ const TextElement = ({ sid, value }) => {
   };
 
   return (
-    <div className="main-content">
+    <div className='main-content'>
       <textarea
         rows={4}
         onChange={handleContentChange}
-        className="element-value-input paragraph"
+        className='element-value-input paragraph'
         value={value}
+        placeholder='Text content goes here...'
       />
     </div>
   );

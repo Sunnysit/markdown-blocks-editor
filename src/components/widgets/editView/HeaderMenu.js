@@ -24,6 +24,14 @@ const elementBtns = [
     defaultValue: `function hello() {
       console.log('Hello World!');
     }`
+  },
+  {
+    type: 'img',
+    text: 'Image',
+    defaultValue: {
+      uri: 'http://source.unsplash.com/random/150x150/?animal',
+      alt: 'image alt'
+    }
   }
 ];
 

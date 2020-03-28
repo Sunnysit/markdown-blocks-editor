@@ -27,6 +27,7 @@ const PreviewView = () => {
     <article className='review-view view' style={styles.container}>
       <HeaderMenu />
       <div className='markdown-body'>{renderMarkdownList}</div>
+      {/* http://source.unsplash.com/random/200x200/?animal */}
     </article>
   );
 };

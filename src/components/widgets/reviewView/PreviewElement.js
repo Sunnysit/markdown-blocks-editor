@@ -34,6 +34,14 @@ const PreviewElement = ({ element }) => {
         </pre>
       );
       break;
+
+    case 'img':
+      renderItem = (
+        <p>
+          <img src={element.data.value} alt={element.data.alt} />
+        </p>
+      );
+      break;
   }
 
   return <>{renderItem}</>;

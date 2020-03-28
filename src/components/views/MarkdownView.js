@@ -22,7 +22,10 @@ const MarkdownView = ({ isVisible = false }) => {
     outputTextarea.current.textContent = outputEl.current.innerText;
     outputTextarea.current.select();
     document.execCommand('copy');
-    toast.success('Text copied!', { className: 'success-toast' });
+    toast.success('Text copied!', {
+      className: 'success-toast',
+      position: toast.POSITION.BOTTOM_RIGHT
+    });
   };
 
   const renderOutputMarkdownText = markdownList.map((element) => {
