@@ -1,21 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import PreviewElement from '../widgets/reviewView/PreviewElement';
-import HeaderMenu from '../widgets/reviewView/HeaderMenu';
+import PreviewElement from '../widgets/previewView/PreviewElement';
 
 //Github Markdown Style
 import 'github-markdown-css';
 
-const styles = {
-  container: {
-    boxSizing: 'border-box',
-    width: '50%',
-    borderLeft: '1px solid black'
-  }
-};
+//Font Awesome style
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PreviewView = () => {
   const markdownList = useSelector((state) => state.markdownList);
+
+  const isEmptyList = markdownList.length === 0 ? true : false;
 
   console.log(markdownList);
 
@@ -24,9 +21,20 @@ const PreviewView = () => {
   });
 
   return (
-    <article className='review-view view' style={styles.container}>
-      <HeaderMenu />
-      <div className='markdown-body'>{renderMarkdownList}</div>
+    <article className='review-view view'>
+      <h2 className='view-title preview-tittle'>
+        <FontAwesomeIcon icon={faEye} /> Preview
+      </h2>
+      {isEmptyList ? (
+        <div className='empty-list-message-container'>
+          <h3 className='empty-list-message'>
+            <FontAwesomeIcon icon={faEye} />
+            <span>Preview is displayed when some elements are added.</span>
+          </h3>
+        </div>
+      ) : (
+        <div className='markdown-body'>{renderMarkdownList}</div>
+      )}
     </article>
   );
 };

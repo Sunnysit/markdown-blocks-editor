@@ -40,7 +40,7 @@ const elementBtns = [
   }
 ];
 
-const HeaderMenu = () => {
+const HeaderLeftMenu = () => {
   const renderElementsButtons = elementBtns.map((button, index) => {
     return (
       <li key={index}>
@@ -60,4 +60,4 @@ const HeaderMenu = () => {
   );
 };
 
-export default HeaderMenu;
+export default HeaderLeftMenu;

@@ -54,6 +54,7 @@ const CodeElement = ({ sid, value, codeType }) => {
           onChange={(e) => handleContentChange(e, 'content')}
           className='element-value-input'
           value={value}
+          placeholder='Paste your code here...'
         />
       </div>
     </div>

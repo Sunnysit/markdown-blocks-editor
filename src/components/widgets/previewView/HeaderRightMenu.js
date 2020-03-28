@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-const HeaderMenu = () => {
+const HeaderRightMenu = () => {
   const dispatch = useDispatch();
 
   const handleEmpty = () => {
@@ -37,4 +37,4 @@ const HeaderMenu = () => {
   );
 };
 
-export default HeaderMenu;
+export default HeaderRightMenu;

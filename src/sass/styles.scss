@@ -33,7 +33,7 @@ button {
 /*=============================================
 =            Color Theme            =
 =============================================*/
-$primary-color: #06a77d;
+$primary-color: #07a14c;
 $accent-color: #f7b32b;
 $background-color: #e7ecef;
 $light-color: #b1d8d4;
@@ -44,7 +44,7 @@ $light-color: #b1d8d4;
 /*=============================================
 =            Dimension            =
 =============================================*/
-$container-height:85vh;
+$container-height:88vh;
 
 
 /*=====  End of Dimension  ======*/
@@ -59,12 +59,72 @@ $container-height:85vh;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.views-container {
+  display: flex;
+  flex: 1;
 }
 
 .view {
-  // max-height: 100%;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  overflow-y: auto;
+  &:first-child {
+    border-right: .5px solid #ccc;
+  }
+
+  .view-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: .2rem;
+    background-color: $primary-color;
+    color: white;
+    text-transform: uppercase;
+    padding-left: .8rem;
+
+    &.preview-tittle {
+      background-color: $accent-color;
+    }
+  }
+
+  .empty-list-message-container {
+    align-self: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+
+    .empty-list-message {
+      color: #ccc;
+      font-size: 1.5rem;
+      width: 60%;
+      text-align: center;
+
+      svg {
+        width: 100%;
+        font-size: 2rem;
+        margin-bottom: .5rem;
+      }
+    }
+
+  }
+
+
 }
 
 .hide {
@@ -98,18 +158,36 @@ $container-height:85vh;
 
 /*=====  End of Main Style  ======*/
 
+
+/*=============================================
+=            Header Menu Style            =
+=============================================*/
+.header-menu {
+  width: 100%;
+  display: flex;
+
+  // min-height: 100px;
+}
+
+
+/*=====  End of Header Menu Style  ======*/
+
+
+
 /*=============================================
   =            EditView Style            =
   =============================================*/
 .edit-view-header {
   background-color: $background-color;
   max-width: 100%;
+  flex: 1;
   padding: 0.5rem;
 }
 
 .element-option-list {
   display: flex;
   flex-wrap: wrap;
+  margin: .3rem 0;
 
   .element-btn {
     display: block;
@@ -353,12 +431,14 @@ $container-height:85vh;
 .review-view-header {
   background-color: $background-color;
   max-width: 100%;
+  flex: 1;
   padding: 0.5rem;
 
   .option-list {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
+    margin: .3rem 0;
 
     li {
       margin: 0 .2rem .2rem;
@@ -401,6 +481,7 @@ $container-height:85vh;
   padding: 45px;
   max-height: $container-height;
   overflow: auto;
+
 
   ul {
     list-style-type: disc;

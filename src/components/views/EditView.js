@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import HeaderMenu from '../widgets/editView/HeaderMenu';
+// import HeaderMenu from '../widgets/editView/HeaderLeftMenu';
 import BasicElementLayout from '../widgets/editView/elements/BasicElementLayout';
 import HeadingElement from '../widgets/editView/elements/HeadingElement';
 import TextElement from '../widgets/editView/elements/TextElement';
@@ -17,18 +17,15 @@ import {
   faHeading,
   faCode,
   faImage,
-  faList
+  faList,
+  faEdit
 } from '@fortawesome/free-solid-svg-icons';
-
-const styles = {
-  container: {
-    width: '50%',
-    overflow: 'auto'
-  }
-};
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EditView = () => {
   const markdownList = useSelector((state) => state.markdownList);
+
+  const isEmptyList = markdownList.length === 0 ? true : false;
 
   const renderList = () => {
     const outputList = markdownList.map((item, index) => {
@@ -148,9 +145,20 @@ const EditView = () => {
   };
 
   return (
-    <article className='edit-view view' style={styles.container}>
-      <HeaderMenu />
-      <ul className='elements-list'>{renderList()}</ul>
+    <article className='edit-view view'>
+      <h2 className='view-title'>
+        <FontAwesomeIcon icon={faEdit} /> Editor
+      </h2>
+      {isEmptyList ? (
+        <div className='empty-list-message-container'>
+          <h3 className='empty-list-message'>
+            <FontAwesomeIcon icon={faEdit} />
+            <span>Add some elements by clicking the buttons above.</span>
+          </h3>
+        </div>
+      ) : (
+        <ul className='elements-list'>{renderList()}</ul>
+      )}
     </article>
   );
 };
