@@ -1,8 +1,13 @@
 import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import shortid from 'shortid';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboard } from '@fortawesome/free-solid-svg-icons';
+import {
+  faClipboard,
+  faFileDownload,
+  faFile
+} from '@fortawesome/free-solid-svg-icons';
 
 import MarkdownText from '../widgets/markdownView/MarkdownText';
 
@@ -13,6 +18,8 @@ const MarkdownView = ({ isVisible = false }) => {
   const dispatch = useDispatch();
 
   const markdownList = useSelector((state) => state.markdownList);
+
+  const isEmptyList = markdownList.length === 0 ? true : false;
 
   const handleCloseView = () => {
     dispatch({ type: 'TOGGLE_RESULT_VIEW' });
@@ -28,6 +35,19 @@ const MarkdownView = ({ isVisible = false }) => {
     });
   };
 
+  const handleDownload = () => {
+    var text = outputEl.current.innerText;
+    var data = new Blob([text], { type: 'text/plain' });
+
+    var url = window.URL.createObjectURL(data);
+    let downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = `${shortid.generate()}.md`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
   const renderOutputMarkdownText = markdownList.map((element) => {
     return <MarkdownText key={element.sid} element={element} />;
   });
@@ -41,24 +61,39 @@ const MarkdownView = ({ isVisible = false }) => {
       <div onClick={handleCloseView} className='background-cover'></div>
       <article className='markdown-text-container'>
         <h2 className='title'>Markdown Text Result</h2>
-        <p className='description'>
-          Copy the content below, and paste into any *.md file.
-        </p>
-        <div className='btn-group'>
-          <button onClick={handleCopyToClipboard} className='btn'>
-            <FontAwesomeIcon icon={faClipboard} />
-            <span>Copy</span>
-          </button>
-          {/* <p>or</p>
-          <button className='btn'>
-            <FontAwesomeIcon icon={faFileExport} />
-            <span>Export</span>
-          </button> */}
-        </div>
-        <div className='output-markdown' ref={outputEl}>
-          {renderOutputMarkdownText}
-        </div>
-        <textarea className='clipboard-area' ref={outputTextarea}></textarea>
+        {isEmptyList ? (
+          <div className='empty-list-message-container'>
+            <h3 className='empty-list-message'>
+              <FontAwesomeIcon icon={faFile} />
+              <span>Result will be available after adding some elements.</span>
+            </h3>
+          </div>
+        ) : (
+          <>
+            <p className='description'>
+              Copy the content below, and paste into any *.md file or directly
+              download.
+            </p>
+            <div className='btn-group'>
+              <button onClick={handleCopyToClipboard} className='btn'>
+                <FontAwesomeIcon icon={faClipboard} />
+                <span>Copy</span>
+              </button>
+              <p>or</p>
+              <button className='btn' onClick={handleDownload}>
+                <FontAwesomeIcon icon={faFileDownload} />
+                <span>Download</span>
+              </button>
+            </div>
+            <div className='output-markdown' ref={outputEl}>
+              {renderOutputMarkdownText}
+            </div>
+            <textarea
+              className='clipboard-area'
+              ref={outputTextarea}
+            ></textarea>
+          </>
+        )}
       </article>
     </section>
   );
