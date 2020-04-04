@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faClipboard,
   faFileDownload,
-  faFile
+  faFile,
 } from '@fortawesome/free-solid-svg-icons';
 
 import MarkdownText from '../widgets/markdownView/MarkdownText';
@@ -31,16 +31,16 @@ const MarkdownView = ({ isVisible = false }) => {
     document.execCommand('copy');
     toast.success('Text copied!', {
       className: 'success-toast',
-      position: toast.POSITION.BOTTOM_RIGHT
+      position: toast.POSITION.BOTTOM_RIGHT,
     });
   };
 
   const handleDownload = () => {
-    var text = outputEl.current.innerText;
-    var data = new Blob([text], { type: 'text/plain' });
+    const text = outputEl.current.innerText;
+    const data = new Blob([text], { type: 'text/plain' });
 
-    var url = window.URL.createObjectURL(data);
-    let downloadLink = document.createElement('a');
+    const url = window.URL.createObjectURL(data);
+    const downloadLink = document.createElement('a');
     downloadLink.href = url;
     downloadLink.download = `${shortid.generate()}.md`;
     document.body.appendChild(downloadLink);
