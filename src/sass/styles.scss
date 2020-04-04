@@ -99,40 +99,40 @@ $container-height:88vh;
     }
   }
 
-  .empty-list-message-container {
-    align-self: center;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+}
+
+.empty-list-message-container {
+  align-self: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
 
 
-    .empty-list-message {
-      color: #ccc;
-      font-size: 1.5rem;
-      width: 60%;
-      text-align: center;
+  .empty-list-message {
+    color: #ccc;
+    font-size: 1.5rem;
+    width: 60%;
+    text-align: center;
 
-      svg {
-        width: 100%;
-        font-size: 2rem;
-        margin-bottom: .5rem;
-      }
+    svg {
+      width: 100%;
+      font-size: 2rem;
+      margin-bottom: .5rem;
     }
-
   }
 
-
 }
+
 
 .hide {
   display: none !important;
 }
 
 .btn {
-  background-color: #ccc;
+  background-color: $primary-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -449,6 +449,10 @@ $container-height:88vh;
     background-color: #ccc;
   }
 
+  .save-btn {
+    background-color: #0787BA;
+  }
+
   button {
     display: block;
     text-align: center;
@@ -477,7 +481,7 @@ $container-height:88vh;
   box-sizing: border-box;
   /* min-width: 200px;
     max-width: 980px; */
-  margin: 0 auto;
+  // margin: 0 auto;
   padding: 45px;
   max-height: $container-height;
   overflow: auto;
