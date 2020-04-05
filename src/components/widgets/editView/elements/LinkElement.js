@@ -11,9 +11,9 @@ const LinkElement = ({ sid, value, linkName }) => {
           sid,
           data: {
             value: e.target.value,
-            linkName
-          }
-        }
+            linkName,
+          },
+        },
       });
     } else {
       dispatch({
@@ -22,42 +22,42 @@ const LinkElement = ({ sid, value, linkName }) => {
           sid,
           data: {
             linkName: e.target.value,
-            value
-          }
-        }
+            value,
+          },
+        },
       });
     }
   };
 
   return (
-    <>
-      <div className="input-group">
-        <label className="link-value-input-label" htmlFor="link-value-input">
+    <div className='link-element'>
+      <div className='input-group'>
+        <label className='link-value-input-label' htmlFor='link-value-input'>
           Name&nbsp;
         </label>
         <input
-          name="link-value-input"
-          className="link-value-input"
+          name='link-value-input'
+          className='link-value-input'
           onChange={(e) => handleValueChange(e, 'linkName')}
           value={linkName}
-          type="text"
-          placeholder="Link Name"
+          type='text'
+          placeholder='Link Name'
         />
       </div>
-      <div className="input-group">
-        <label className="link-value-input-label" htmlFor="link-value-input">
+      <div className='input-group'>
+        <label className='link-value-input-label' htmlFor='link-value-input'>
           URL&nbsp;
         </label>
         <input
-          name="link-value-input"
-          className="link-value-input"
+          name='link-value-input'
+          className='link-value-input'
           onChange={(e) => handleValueChange(e, 'url')}
           value={value}
-          type="text"
-          placeholder="https://example.com"
+          type='text'
+          placeholder='https://example.com'
         />
       </div>
-    </>
+    </div>
   );
 };
 

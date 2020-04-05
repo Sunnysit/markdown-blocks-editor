@@ -153,6 +153,7 @@ const EditView = () => {
                 listType={item.data.listType}
                 value={item.data.value}
                 sid={item.sid}
+                className='listlist'
               />
             </BasicElementLayout>
           );

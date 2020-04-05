@@ -291,23 +291,31 @@
             }
 
             //Link Element style
-            .input-group {
+            .link-element {
                 display: flex;
-                align-items: center;
-                width: 50%;
+                flex-direction: column;
+                width: 100%;
+
+                .input-group {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .link-value-input {
+                    flex: 1;
+                    padding: 0.5rem;
+                    margin: 8px 0;
+                    display: inline-block;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    font-size: 1rem;
+                    margin-right: 0.5rem;
+                }
             }
 
-            .link-value-input {
-                flex: 1;
-                padding: 0.5rem;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 1rem;
-                margin-right: 0.5rem;
-            }
+
 
             //Code Element style
             .code-input-container {
