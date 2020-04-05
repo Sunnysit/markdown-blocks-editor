@@ -1,22 +1,8 @@
+import { APP_INTRODUCTION } from '../assets/introductionInfo';
+
 const initState = {
   showResultView: false,
-  markdownList: [
-    {
-      type: 'heading',
-      sid: 'zasAtvkC8',
-      data: {
-        value: 'Heading',
-        level: 1
-      }
-    },
-    {
-      type: 'paragraph',
-      sid: '1VW0rHTVR',
-      data: {
-        value: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`
-      }
-    }
-  ]
+  markdownList: APP_INTRODUCTION,
 };
 
 const rootReducer = (state = initState, action) => {
@@ -32,7 +18,7 @@ const rootReducer = (state = initState, action) => {
     case 'ADD_ELEMENT':
       return {
         ...state,
-        markdownList: [...state.markdownList, action.payload]
+        markdownList: [...state.markdownList, action.payload],
       };
     case 'CHANGE_ELEMENT_CONTENT':
       newMarkdownList = state.markdownList.map((item) => {
@@ -41,7 +27,7 @@ const rootReducer = (state = initState, action) => {
       });
       return {
         ...state,
-        markdownList: newMarkdownList
+        markdownList: newMarkdownList,
       };
 
     case 'DELETE_ELEMENT':
@@ -50,14 +36,14 @@ const rootReducer = (state = initState, action) => {
       );
       return {
         ...state,
-        markdownList: newMarkdownList
+        markdownList: newMarkdownList,
       };
 
     case 'UPDATE_NEW_LIST':
       newMarkdownList = action.payload.modifiedList;
       return {
         ...state,
-        markdownList: newMarkdownList
+        markdownList: newMarkdownList,
       };
 
     default:
