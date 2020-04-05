@@ -4,6 +4,7 @@ import HeaderMenu from './HeaderMenu';
 import PreviewView from '../views/PreviewView';
 import EditView from '../views/EditView';
 import MarkdownView from '../views/MarkdownView';
+import ViewSwitchButton from '../widgets/editView/ViewSwitchButton';
 
 const Main = () => {
   const showResultView = useSelector((state) => state.showResultView);
@@ -14,7 +15,7 @@ const Main = () => {
         <EditView />
         <PreviewView />
       </div>
-
+      <ViewSwitchButton />
       <MarkdownView isVisible={showResultView} />
     </main>
   );

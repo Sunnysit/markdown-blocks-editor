@@ -1,6 +1,7 @@
 import { APP_INTRODUCTION } from '../assets/introductionInfo';
 
 const initState = {
+  currentDisplayMode: 'edit',
   showResultView: false,
   markdownList: APP_INTRODUCTION,
 };
@@ -9,6 +10,9 @@ const rootReducer = (state = initState, action) => {
   let newMarkdownList = [];
 
   switch (action.type) {
+    case 'CHANGE_DISPLAY_MODE':
+      return { ...state, currentDisplayMode: action.payload };
+
     case 'TOGGLE_RESULT_VIEW':
       return { ...state, showResultView: !state.showResultView };
 

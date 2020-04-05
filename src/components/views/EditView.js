@@ -26,6 +26,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EditView = () => {
   const markdownList = useSelector((state) => state.markdownList);
+  const currentDisplayMode = useSelector((state) => state.currentDisplayMode);
+
+  const mobileHiddenClasses =
+    currentDisplayMode === 'edit'
+      ? 'edit-view view'
+      : 'edit-view view mobile-hidden';
 
   const isEmptyList = markdownList.length === 0 ? true : false;
 
@@ -153,14 +159,18 @@ const EditView = () => {
           break;
       }
 
-      return <li key={item.sid}>{element}</li>;
+      return (
+        <li className='element-item' key={item.sid}>
+          {element}
+        </li>
+      );
     });
 
     return outputList;
   };
 
   return (
-    <article className='edit-view view'>
+    <article className={mobileHiddenClasses}>
       <h2 className='view-title'>
         <FontAwesomeIcon icon={faEdit} /> Editor
       </h2>

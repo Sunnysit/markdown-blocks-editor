@@ -103,6 +103,24 @@
     border-radius: 5px !important;
 }
 
+.view-switch-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    color: white;
+    border-radius: 50%;
+    display: none;
+
+    &.edit-mode {
+        background-color: $primary-color;
+    }
+
+    &.preview-mode {
+        background-color: $accent-color;
+    }
+}
+
 /*=====  End of Main Style  ======*/
 
 
@@ -354,6 +372,7 @@
 
             .delete-list-item-btn {
                 margin-left: 0.5rem;
+                margin-top: .5rem;
             }
 
             .add-list-item-btn {
@@ -409,8 +428,8 @@
         padding: 0.2rem 0.5rem;
         margin: 0 0.2rem;
 
-        svg {
-            margin-right: 0.2rem;
+        span {
+            margin-left: 0.2rem;
         }
 
         &:hover {
@@ -549,3 +568,49 @@ header {
 }
 
 /*=====  End of Footer Style  ======*/
+
+
+/*=============================================
+=            Mobile Version style            =
+=============================================*/
+@media screen and (max-width:576px) {
+
+    .header-menu {
+        max-height: 80px;
+    }
+
+    .views-container {
+        flex-wrap: wrap;
+    }
+
+    .view {
+        width: 100%;
+
+        &.mobile-hidden {
+            display: none;
+        }
+    }
+
+    .edit-view {
+        .list-container li {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .view-switch-btn {
+        display: block;
+    }
+
+    .element-btn span,
+    .option-list button span {
+        display: none;
+    }
+
+    .element-item:last-child {
+        padding-bottom: 2rem;
+    }
+}
+
+
+/*=====  End of Mobile Version style  ======*/
