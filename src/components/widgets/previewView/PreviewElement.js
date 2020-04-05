@@ -19,6 +19,10 @@ const PreviewElement = ({ element }) => {
     case 'paragraph':
       renderItem = <p>{element.data.value}</p>;
       break;
+
+    case 'blockquote':
+      renderItem = <blockquote>{element.data.value}</blockquote>;
+      break;
     case 'link':
       renderItem = (
         <p>

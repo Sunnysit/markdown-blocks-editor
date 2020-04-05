@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import BasicElementLayout from '../widgets/editView/elements/BasicElementLayout';
 import HeadingElement from '../widgets/editView/elements/HeadingElement';
 import TextElement from '../widgets/editView/elements/TextElement';
+import BlockquoteElement from '../widgets/editView/elements/BlockquoteElement';
 import LinkElement from '../widgets/editView/elements/LinkElement';
 import CodeElement from '../widgets/editView/elements/CodeElement';
 import ImgElement from '../widgets/editView/elements/ImgElement';
@@ -18,7 +19,8 @@ import {
   faCode,
   faImage,
   faList,
-  faEdit
+  faEdit,
+  faQuoteLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -83,6 +85,19 @@ const EditView = () => {
               title='Paragraph'
             >
               <TextElement value={item.data.value} sid={item.sid} />
+            </BasicElementLayout>
+          );
+          break;
+
+        case 'blockquote':
+          element = (
+            <BasicElementLayout
+              sid={item.sid}
+              index={index}
+              icon={faQuoteLeft}
+              title='Blockquote'
+            >
+              <BlockquoteElement value={item.data.value} sid={item.sid} />
             </BasicElementLayout>
           );
           break;

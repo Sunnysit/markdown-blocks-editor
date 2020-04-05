@@ -6,10 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHeading,
   faParagraph,
+  faQuoteLeft,
   faLink,
   faCode,
   faImage,
-  faList
+  faList,
 } from '@fortawesome/free-solid-svg-icons';
 
 const TextButton = ({ type, text, defaultValue }) => {
@@ -22,8 +23,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       sid: shortid.generate(),
       data: {
         value: defaultValue,
-        level: 1
-      }
+        level: 1,
+      },
     };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
@@ -35,8 +36,21 @@ const TextButton = ({ type, text, defaultValue }) => {
       type: elementType,
       sid: shortid.generate(),
       data: {
-        value: defaultValue
-      }
+        value: defaultValue,
+      },
+    };
+
+    dispatch({ type: 'ADD_ELEMENT', payload: newElement });
+  };
+
+  //Function blockquote element
+  const addBlockquoteElement = (elementType, defaultValue = '') => {
+    const newElement = {
+      type: elementType,
+      sid: shortid.generate(),
+      data: {
+        value: defaultValue,
+      },
     };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
@@ -49,8 +63,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       sid: shortid.generate(),
       data: {
         value: defaultValue,
-        linkName: 'Link'
-      }
+        linkName: 'Link',
+      },
     };
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
   };
@@ -62,8 +76,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       sid: shortid.generate(),
       data: {
         value: defaultValue,
-        codeType: ''
-      }
+        codeType: '',
+      },
     };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
@@ -76,8 +90,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       sid: shortid.generate(),
       data: {
         value: defaultValue.uri,
-        alt: defaultValue.alt
-      }
+        alt: defaultValue.alt,
+      },
     };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
@@ -90,8 +104,8 @@ const TextButton = ({ type, text, defaultValue }) => {
       sid: shortid.generate(),
       data: {
         value: [''],
-        listType: defaultValue
-      }
+        listType: defaultValue,
+      },
     };
 
     dispatch({ type: 'ADD_ELEMENT', payload: newElement });
@@ -117,6 +131,17 @@ const TextButton = ({ type, text, defaultValue }) => {
             onClick={() => addTextElement(type, defaultValue)}
           >
             <FontAwesomeIcon icon={faParagraph} />
+            <span>{text}</span>
+          </button>
+        );
+
+      case 'blockquote':
+        return (
+          <button
+            className='element-btn'
+            onClick={() => addBlockquoteElement(type, defaultValue)}
+          >
+            <FontAwesomeIcon icon={faQuoteLeft} />
             <span>{text}</span>
           </button>
         );
