@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import BasicElementLayout from '../widgets/editView/elements/BasicElementLayout';
 import HeadingElement from '../widgets/editView/elements/HeadingElement';
 import TextElement from '../widgets/editView/elements/TextElement';
+import BlockquoteElement from '../widgets/editView/elements/BlockquoteElement';
 import LinkElement from '../widgets/editView/elements/LinkElement';
 import CodeElement from '../widgets/editView/elements/CodeElement';
 import ImgElement from '../widgets/editView/elements/ImgElement';
@@ -18,12 +19,19 @@ import {
   faCode,
   faImage,
   faList,
-  faEdit
+  faEdit,
+  faQuoteLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EditView = () => {
   const markdownList = useSelector((state) => state.markdownList);
+  const currentDisplayMode = useSelector((state) => state.currentDisplayMode);
+
+  const mobileHiddenClasses =
+    currentDisplayMode === 'edit'
+      ? 'edit-view view'
+      : 'edit-view view mobile-hidden';
 
   const isEmptyList = markdownList.length === 0 ? true : false;
 
@@ -86,6 +94,19 @@ const EditView = () => {
             </BasicElementLayout>
           );
           break;
+
+        case 'blockquote':
+          element = (
+            <BasicElementLayout
+              sid={item.sid}
+              index={index}
+              icon={faQuoteLeft}
+              title='Blockquote'
+            >
+              <BlockquoteElement value={item.data.value} sid={item.sid} />
+            </BasicElementLayout>
+          );
+          break;
         case 'code':
           element = (
             <BasicElementLayout
@@ -138,14 +159,18 @@ const EditView = () => {
           break;
       }
 
-      return <li key={item.sid}>{element}</li>;
+      return (
+        <li className='element-item' key={item.sid}>
+          {element}
+        </li>
+      );
     });
 
     return outputList;
   };
 
   return (
-    <article className='edit-view view'>
+    <article className={mobileHiddenClasses}>
       <h2 className='view-title'>
         <FontAwesomeIcon icon={faEdit} /> Editor
       </h2>

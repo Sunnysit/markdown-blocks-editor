@@ -79,7 +79,7 @@ const MarkdownView = ({ isVisible = false }) => {
                 <FontAwesomeIcon icon={faClipboard} />
                 <span>Copy</span>
               </button>
-              <p>or</p>
+              <p>&nbsp;or&nbsp;</p>
               <button className='btn' onClick={handleDownload}>
                 <FontAwesomeIcon icon={faFileDownload} />
                 <span>Download</span>

@@ -6,6 +6,10 @@ const MarkdownText = ({ element }) => {
       default:
       case 'paragraph':
         return element.data.value;
+
+      case 'blockquote':
+        return `> ${element.data.value}`;
+
       case 'heading':
         let output = '';
         switch (element.data.level) {

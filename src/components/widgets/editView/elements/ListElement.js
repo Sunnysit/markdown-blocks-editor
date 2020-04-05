@@ -2,9 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlusCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import shortid from 'shortid';
 
 const ListElement = ({ sid, value, listType }) => {
   const dispatch = useDispatch();
+
+  const listRadioId = shortid.generate();
 
   const handleContentChange = (e, fieldName) => {
     if (fieldName === 'list-type') {
@@ -14,9 +17,9 @@ const ListElement = ({ sid, value, listType }) => {
           sid,
           data: {
             value,
-            listType: e.target.value
-          }
-        }
+            listType: e.target.value,
+          },
+        },
       });
     }
   };
@@ -37,9 +40,9 @@ const ListElement = ({ sid, value, listType }) => {
         sid,
         data: {
           value: newList,
-          listType
-        }
-      }
+          listType,
+        },
+      },
     });
   };
 
@@ -50,9 +53,9 @@ const ListElement = ({ sid, value, listType }) => {
         sid,
         data: {
           value: [...value, ''],
-          listType
-        }
-      }
+          listType,
+        },
+      },
     });
   };
 
@@ -67,8 +70,8 @@ const ListElement = ({ sid, value, listType }) => {
       dispatch({
         type: 'DELETE_ELEMENT',
         payload: {
-          sid
-        }
+          sid,
+        },
       });
     } else {
       dispatch({
@@ -77,9 +80,9 @@ const ListElement = ({ sid, value, listType }) => {
           sid,
           data: {
             value: newList,
-            listType
-          }
-        }
+            listType,
+          },
+        },
       });
     }
   };
@@ -115,7 +118,7 @@ const ListElement = ({ sid, value, listType }) => {
           onChange={(e) => handleContentChange(e, 'list-type')}
           type='radio'
           id='ul-radio'
-          name='list-type'
+          name={`list-type-${listRadioId}`}
           value='ul'
           checked={listType === 'ul'}
         />
@@ -124,7 +127,7 @@ const ListElement = ({ sid, value, listType }) => {
           onChange={(e) => handleContentChange(e, 'list-type')}
           type='radio'
           id='ol-radio'
-          name='list-type'
+          name={`list-type-${listRadioId}`}
           value='ol'
           checked={listType === 'ol'}
         />

@@ -11,7 +11,7 @@ const HeaderRightMenu = () => {
   //Load local storage to get user saved file
   useEffect(() => {
     const loadedListData = localStorage.getItem('markdown-list');
-    console.log('run!');
+
     if (loadedListData) {
       const modifiedList = JSON.parse(atob(loadedListData));
       if (modifiedList.length > 0) {
@@ -31,6 +31,7 @@ const HeaderRightMenu = () => {
   };
 
   const handleSave = () => {
+    //Set local storage to store user saved file
     const encodeListData = btoa(JSON.stringify(markdownList));
     localStorage.setItem('markdown-list', encodeListData);
     toast.success('File saved!', {
