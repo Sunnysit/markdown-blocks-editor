@@ -5,8 +5,8 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 //Components
 import HomeView from './components/views/HomeView';
+import AboutView from './components/views/AboutView';
 import Main from './components/container/Main';
-import Footer from './components/container/Footer';
 
 toast.configure({
   autoClose: 4000,
@@ -22,6 +22,9 @@ function App() {
           </Route>
           <Route path='/editor'>
             <Main />
+          </Route>
+          <Route path='/about'>
+            <AboutView />
           </Route>
           <Route path='*'>
             <Redirect to='/' />

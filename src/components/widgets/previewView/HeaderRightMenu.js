@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTrashAlt, faSave } from '@fortawesome/free-solid-svg-icons';
+
+import logo from '../../../assets/img/MBE-logo.svg';
 
 const HeaderRightMenu = () => {
   const markdownList = useSelector((state) => state.markdownList);
@@ -64,6 +67,11 @@ const HeaderRightMenu = () => {
             <FontAwesomeIcon icon={faCheck} />
             <span>Done & Export</span>
           </button>
+        </li>
+        <li>
+          <NavLink to='/'>
+            <img className='logo' src={logo} alt='MBE logo' />
+          </NavLink>
         </li>
       </ul>
     </div>

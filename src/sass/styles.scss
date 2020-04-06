@@ -40,15 +40,14 @@ $light-color: #b1d8d4;
 
 /*=====  End of Color Theme  ======*/
 
-
 /*=============================================
 =            Dimension            =
 =============================================*/
-$container-height:87vh;
-
+$mobile-screen-size: 576px;
+$container-height: 87vh;
 
 /*=====  End of Dimension  ======*/
 
-
-@import "./home.scss";
-@import "./editor.scss";
+@import './home.scss';
+@import './editor.scss';
+@import './about.scss';

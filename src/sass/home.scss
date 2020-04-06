@@ -1,36 +1,135 @@
 .home-view {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $primary-color;
+  height: 100vh;
 
+  .banner {
+    width: 100%;
+    text-align: center;
 
-    .banner {
-        background-color: $primary-color;
-        width: 100%;
-        text-align: center;
-
-        .title {
-            color: white;
-            font-size: 3rems;
-        }
+    .title {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 0;
     }
 
-    .start-btn {
+    .subtitle {
+      margin: 0;
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+
+  .start-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
+}
+
+/*=============================================
+  =            Header Style            =
+  =============================================*/
+.header {
+  background-color: $background-color;
+  display: flex;
+  justify-content: space-between;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    width: 40%;
+    .logo {
+      display: block;
+      width: 5rem;
+    }
+  }
+
+  .header-right {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    .nav {
+      display: flex;
+      margin: 0;
+      height: 100%;
+      align-items: center;
+
+      .nav-btn {
+        text-decoration: none;
         background-color: $primary-color;
         text-align: center;
         border-radius: 5px;
         color: white;
         padding: 0.2rem 0.5rem;
         margin: 0 0.2rem;
-        font-size: 1.5rem;
-        text-decoration: none;
         text-transform: capitalize;
-
-        &:hover {
-            background-color: $accent-color;
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 0.2rem;
         }
+        &:hover {
+          background-color: $accent-color;
+        }
+      }
     }
-
+  }
 }
+
+/*=====  End of Header Style  ======*/
+
+/*=============================================
+  =            Footer Style            =
+  =============================================*/
+.footer {
+  text-align: center;
+  background-color: $background-color;
+  color: black;
+
+  .description {
+    margin: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .sunny-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+/*=====  End of Footer Style  ======*/
+
+/*=============================================
+=            Mobile Version Styles            =
+=============================================*/
+@media screen and (max-width: $mobile-screen-size) {
+  .header {
+    padding: 1rem 0;
+    .header-title {
+      display: none;
+    }
+  }
+}
+
+/*=====  End of Mobile Version Styles  ======*/

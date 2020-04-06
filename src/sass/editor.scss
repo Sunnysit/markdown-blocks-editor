@@ -2,399 +2,389 @@
   =            Main Style            =
   =============================================*/
 .app {
-    max-height: 100vh;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  max-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .views-container {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .view {
-    width: 50%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  width: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
-    &:first-child {
-        border-right: .5px solid #ccc;
+  &:first-child {
+    border-right: 0.5px solid #ccc;
+  }
+
+  .view-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.2rem;
+    background-color: $primary-color;
+    color: white;
+    text-transform: uppercase;
+    padding-left: 0.8rem;
+
+    &.preview-tittle {
+      background-color: $accent-color;
     }
-
-    .view-title {
-        font-size: 1rem;
-        font-weight: bold;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: .2rem;
-        background-color: $primary-color;
-        color: white;
-        text-transform: uppercase;
-        padding-left: .8rem;
-
-        &.preview-tittle {
-            background-color: $accent-color;
-        }
-    }
-
+  }
 }
 
 .empty-list-message-container {
-    align-self: center;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+  align-self: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 
+  .empty-list-message {
+    color: #ccc;
+    font-size: 1.5rem;
+    width: 60%;
+    text-align: center;
 
-
-    .empty-list-message {
-        color: #ccc;
-        font-size: 1.5rem;
-        width: 60%;
-        text-align: center;
-
-        svg {
-            width: 100%;
-            font-size: 2rem;
-            margin-bottom: .5rem;
-        }
+    svg {
+      width: 100%;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
-
+  }
 }
 
-
 .hide {
-    display: none !important;
+  display: none !important;
 }
 
 .btn {
-    background-color: $primary-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.2rem;
-    border-radius: 5px;
-    padding: 0.2rem;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  color: white;
+
+  &:hover {
+    background-color: $accent-color;
     color: white;
+  }
 
-    &:hover {
-        background-color: $accent-color;
-        color: white;
-    }
-
-    svg {
-        margin-right: 0.2rem;
-    }
+  svg {
+    margin-right: 0.2rem;
+  }
 }
 
 .success-toast {
-    background-color: $primary-color !important;
-    border-radius: 5px !important;
+  background-color: $primary-color !important;
+  border-radius: 5px !important;
 }
 
 .view-switch-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    padding: 1rem;
-    color: white;
-    border-radius: 50%;
-    display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  color: white;
+  border-radius: 50%;
+  display: none;
 
-    &.edit-mode {
-        background-color: $primary-color;
-    }
+  &.edit-mode {
+    background-color: $primary-color;
+  }
 
-    &.preview-mode {
-        background-color: $accent-color;
-    }
+  &.preview-mode {
+    background-color: $accent-color;
+  }
 }
 
 /*=====  End of Main Style  ======*/
-
 
 /*=============================================
   =            Header Menu Style            =
   =============================================*/
 .header-menu {
-    width: 100%;
-    display: flex;
-
-    // min-height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-
 /*=====  End of Header Menu Style  ======*/
-
-
 
 /*=============================================
     =            EditView Style            =
     =============================================*/
 .edit-view-header {
-    background-color: $background-color;
-    max-width: 100%;
-    flex: 3;
-    padding: 0.5rem;
+  background-color: $background-color;
+  max-width: 100%;
+  flex: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .element-option-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: .3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.3rem 0;
 
-    .element-btn {
-        display: block;
-        text-align: center;
-        border-radius: 5px;
-        color: white;
-        background-color: $primary-color;
-        padding: 0.2rem 0.5rem;
-        margin: 0 0.2rem .2rem;
+  .element-btn {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: $primary-color;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem 0.2rem;
 
-        svg {
-            margin-right: 0.2rem;
-        }
-
-        &:hover {
-            background-color: $accent-color;
-        }
+    svg {
+      margin-right: 0.2rem;
     }
+
+    &:hover {
+      background-color: $accent-color;
+    }
+  }
 }
 
 .elements-list {
-    padding: 0.5rem;
-    margin: 0;
-    max-height: $container-height;
-    overflow: auto;
+  padding: 0.5rem;
+  margin: 0;
+  max-height: $container-height;
+  overflow: auto;
 }
 
 .element-container {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  .order-handlers {
+    width: 5%;
     display: flex;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
 
-    .order-handlers {
-        width: 5%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .element-index {
-            text-align: center;
-            padding: 0.2rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .order-handle-btn {
-            background-color: $background-color;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0.2rem;
-            border-radius: 5px;
-
-            &:hover {
-                background-color: $accent-color;
-                color: white;
-            }
-        }
+    .element-index {
+      text-align: center;
+      padding: 0.2rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      display: block;
+      margin: 0 auto;
     }
 
-    .element-info-container {
-        width: 95%;
+    .order-handle-btn {
+      background-color: $background-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0.2rem;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $accent-color;
+        color: white;
+      }
+    }
+  }
+
+  .element-info-container {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $primary-color;
+      padding: 0.2rem 0.5rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .element-type {
+      margin: 0.2rem 0;
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+
+      span {
+        margin-left: 0.5rem;
+      }
+    }
+
+    .delete-btn {
+      width: 1rem;
+      height: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      color: white;
+    }
+
+    .main-content {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.2rem 0.5rem;
+      background-color: $background-color;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      //Heading Element style
+      .heading-input-group {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .heading-level-select {
+          padding: 0.5rem;
+          margin: 8px 8px 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 1rem;
+        }
+      }
+
+      //Text Element style
+      .element-value-input {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      //Link Element style
+      .link-element {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .input-group {
+          display: flex;
+          align-items: center;
+          width: 100%;
+        }
+
+        .link-value-input {
+          flex: 1;
+          padding: 0.5rem;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 1rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      //Code Element style
+      .code-input-container {
         display: flex;
         flex-wrap: wrap;
 
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: $primary-color;
-            padding: 0.2rem 0.5rem;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+        width: 100%;
+
+        .input-group {
+          width: 100%;
+          font-size: 12px;
+          display: flex;
+          justify-content: flex-start;
         }
 
-        .element-type {
-            margin: 0.2rem 0;
-            font-size: 1rem;
-            color: white;
-            font-weight: bold;
-
-            span {
-                margin-left: 0.5rem;
-            }
+        .code-type-value-input {
+          width: 150px;
+          font-size: 12px;
+          margin: 0;
         }
+      }
 
-        .delete-btn {
-            width: 1rem;
-            height: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            color: white;
+      //Image Element style
+      .uri-input-group {
+        width: 100%;
+      }
+
+      //List Element style
+      .list-radio-input-group {
+        display: block;
+        width: 100%;
+      }
+
+      .list-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          margin-left: 1rem;
         }
+      }
 
-        .main-content {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0.2rem 0.5rem;
-            background-color: $background-color;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
+      .ul-style {
+        list-style: disc;
+      }
 
-            //Heading Element style
-            .heading-input-group {
-                display: flex;
-                align-items: center;
-                width: 100%;
+      .ol-style {
+        list-style: decimal;
+      }
 
-                .heading-level-select {
-                    padding: 0.5rem;
-                    margin: 8px 8px 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                    font-size: 1rem;
-                }
-            }
+      .list-item-input {
+        width: 96%;
+        padding: 0.5rem;
+        margin: 0.5rem 0 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
 
-            //Text Element style
-            .element-value-input {
-                width: 100%;
-                padding: 0.5rem;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 1rem;
-            }
+      .delete-list-item-btn {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+      }
 
-            //Link Element style
-            .link-element {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
+      .add-list-item-btn {
+        color: $primary-color;
+        font-size: 1.3rem;
+        display: block;
+        margin: 0.2rem auto;
 
-                .input-group {
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                }
-
-                .link-value-input {
-                    flex: 1;
-                    padding: 0.5rem;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                    font-size: 1rem;
-                    margin-right: 0.5rem;
-                }
-            }
-
-
-
-            //Code Element style
-            .code-input-container {
-                display: flex;
-                flex-wrap: wrap;
-
-                width: 100%;
-
-                .input-group {
-                    width: 100%;
-                    font-size: 12px;
-                    display: flex;
-                    justify-content: flex-start;
-                }
-
-                .code-type-value-input {
-                    width: 150px;
-                    font-size: 12px;
-                    margin: 0;
-                }
-            }
-
-            //Image Element style
-            .uri-input-group {
-                width: 100%;
-            }
-
-            //List Element style
-            .list-radio-input-group {
-                display: block;
-                width: 100%;
-            }
-
-            .list-container {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-
-                li {
-                    margin-left: 1rem;
-                }
-            }
-
-            .ul-style {
-                list-style: disc;
-            }
-
-            .ol-style {
-                list-style: decimal;
-            }
-
-            .list-item-input {
-                width: 96%;
-                padding: 0.5rem;
-                margin: 0.5rem 0 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-                font-size: 1rem;
-            }
-
-            .delete-list-item-btn {
-                margin-left: 0.5rem;
-                margin-top: .5rem;
-            }
-
-            .add-list-item-btn {
-                color: $primary-color;
-                font-size: 1.3rem;
-                display: block;
-                margin: 0.2rem auto;
-
-                &:hover {
-                    color: $accent-color;
-                }
-            }
+        &:hover {
+          color: $accent-color;
         }
+      }
     }
+  }
 }
 
 /*=====  End of EditView Style  ======*/
@@ -403,47 +393,55 @@
   =            Review View Style            =
   =============================================*/
 .review-view-header {
-    background-color: $background-color;
-    max-width: 100%;
-    flex: 2;
-    padding: 0.5rem;
+  background-color: $background-color;
+  max-width: 100%;
+  flex: 2;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
-    .option-list {
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap;
-        margin: .3rem 0;
+  .option-list {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.3rem 0;
 
-        li {
-            margin: 0 .2rem .2rem;
-        }
+    li {
+      margin: 0 0.2rem 0.2rem;
     }
 
-    .empty-btn {
-        background-color: #ccc;
+    .logo {
+      width: 80px;
+    }
+  }
+
+  .empty-btn {
+    background-color: #ccc;
+  }
+
+  .save-btn {
+    background-color: #0787ba;
+  }
+
+  button {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    background-color: $primary-color;
+    padding: 0.2rem 0.5rem;
+    margin: 0 0.2rem;
+
+    span {
+      margin-left: 0.2rem;
     }
 
-    .save-btn {
-        background-color: #0787BA;
+    &:hover {
+      background-color: $accent-color;
     }
-
-    button {
-        display: block;
-        text-align: center;
-        border-radius: 5px;
-        color: white;
-        background-color: $primary-color;
-        padding: 0.2rem 0.5rem;
-        margin: 0 0.2rem;
-
-        span {
-            margin-left: 0.2rem;
-        }
-
-        &:hover {
-            background-color: $accent-color;
-        }
-    }
+  }
 }
 
 /*=====  End of Review View Style  ======*/
@@ -452,24 +450,23 @@
     =            Github Markdown Style            =
     =============================================*/
 .markdown-body {
-    box-sizing: border-box;
-    /* min-width: 200px;
+  box-sizing: border-box;
+  /* min-width: 200px;
       max-width: 980px; */
-    // margin: 0 auto;
-    padding: 45px;
-    max-height: $container-height;
-    overflow: auto;
+  // margin: 0 auto;
+  padding: 45px;
+  max-height: $container-height;
+  overflow: auto;
 
-
-    ul {
-        list-style-type: disc;
-    }
+  ul {
+    list-style-type: disc;
+  }
 }
 
 @media (max-width: 767px) {
-    .markdown-body {
-        padding: 15px;
-    }
+  .markdown-body {
+    padding: 15px;
+  }
 }
 
 /*=====  End of Github Markdown Style  ======*/
@@ -478,147 +475,122 @@
   =            Markdown View Style            =
   =============================================*/
 .output-markdown-window {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .background-cover {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    position: absolute;
     width: 100vw;
     height: 100vh;
-
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    .background-cover {
-        background-color: rgba($color: #000000, $alpha: 0.6);
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        z-index: 10;
-    }
+    z-index: 10;
+  }
 }
 
 .markdown-text-container {
-    margin-top: 2rem;
-    background-color: $background-color;
+  margin-top: 2rem;
+  background-color: $background-color;
+  border-radius: 5px;
+  width: 80vw;
+  max-width: 980px;
+  z-index: 11;
+
+  .title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .description {
+    text-align: center;
+    margin: 0.5rem;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .output-markdown {
+    background-color: white;
     border-radius: 5px;
-    width: 80vw;
-    max-width: 980px;
-    z-index: 11;
+    margin: 0.5rem;
+    padding: 1rem;
+    max-height: 70vh;
+    overflow: auto;
+    z-index: 10;
+  }
 
-    .title {
-        text-align: center;
-        margin-bottom: 0;
-    }
+  .code-block {
+    overflow: auto;
+    margin: 0;
+  }
 
-    .description {
-        text-align: center;
-        margin: 0.5rem;
-    }
-
-    .btn-group {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    .output-markdown {
-        background-color: white;
-        border-radius: 5px;
-        margin: 0.5rem;
-        padding: 1rem;
-        max-height: 70vh;
-        overflow: auto;
-        z-index: 10;
-    }
-
-    .code-block {
-        overflow: auto;
-        margin: 0;
-    }
-
-    .clipboard-area {
-        opacity: 0;
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: -1;
-    }
+  .clipboard-area {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+  }
 }
 
 /*=====  End of Markdown View Style  ======*/
 
 /*=============================================
-  =            Header Style            =
-  =============================================*/
-header {
-    background-color: $primary-color;
-    color: white;
-}
-
-/*=====  End of Header Style  ======*/
-
-/*=============================================
-  =            Footer Style            =
-  =============================================*/
-.footer {
-    text-align: center;
-    background-color: $primary-color;
-    color: white;
-
-    .description {
-        margin: .3rem;
-        font-size: 0.8rem;
-    }
-}
-
-/*=====  End of Footer Style  ======*/
-
-
-/*=============================================
 =            Mobile Version style            =
 =============================================*/
-@media screen and (max-width:576px) {
+@media screen and (max-width: $mobile-screen-size) {
+  .header-menu {
+    max-height: 80px;
+  }
 
-    .header-menu {
-        max-height: 80px;
+  .views-container {
+    flex-wrap: wrap;
+  }
+
+  .view {
+    width: 100%;
+
+    &.mobile-hidden {
+      display: none;
     }
+  }
 
-    .views-container {
-        flex-wrap: wrap;
+  .edit-view {
+    .list-container li {
+      display: flex;
+      align-items: center;
     }
+  }
 
-    .view {
-        width: 100%;
+  .view-switch-btn {
+    display: block;
+  }
 
-        &.mobile-hidden {
-            display: none;
-        }
-    }
+  .element-btn span,
+  .option-list button span {
+    display: none;
+  }
 
-    .edit-view {
-        .list-container li {
-            display: flex;
-            align-items: center;
-        }
-    }
+  .element-item:last-child {
+    padding-bottom: 2rem;
+  }
 
-    .view-switch-btn {
-        display: block;
-    }
-
-    .element-btn span,
-    .option-list button span {
-        display: none;
-    }
-
-    .element-item:last-child {
-        padding-bottom: 2rem;
-    }
+  .option-list .logo {
+    display: none;
+  }
 }
-
 
 /*=====  End of Mobile Version style  ======*/
