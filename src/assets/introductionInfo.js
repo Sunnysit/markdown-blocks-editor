@@ -43,7 +43,7 @@ export const APP_INTRODUCTION = [
     type: 'heading',
     sid: '1FROtp3Pv',
     data: {
-      value: 'What types of elements does Markdown Blocks Editor suppor?',
+      value: 'What types of elements does Markdown Blocks Editor support?',
       level: 2,
     },
   },

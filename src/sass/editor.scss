@@ -125,6 +125,8 @@
   width: 100%;
   display: flex;
   align-items: center;
+  background-color: $background-color;
+  padding: 0.5rem 0;
 }
 
 /*=====  End of Header Menu Style  ======*/
@@ -133,7 +135,6 @@
     =            EditView Style            =
     =============================================*/
 .edit-view-header {
-  background-color: $background-color;
   max-width: 100%;
   flex: 3;
   height: 100%;
@@ -393,7 +394,6 @@
   =            Review View Style            =
   =============================================*/
 .review-view-header {
-  background-color: $background-color;
   max-width: 100%;
   flex: 2;
   height: 100%;
@@ -406,7 +406,7 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0.3rem 0;
+    margin: 0;
 
     li {
       margin: 0 0.2rem 0.2rem;
