@@ -20,7 +20,7 @@ const PreviewView = () => {
 
   const isEmptyList = markdownList.length === 0 ? true : false;
 
-  // console.log(markdownList);
+  // console.log(JSON.stringify(markdownList));
 
   const renderMarkdownList = markdownList.map((item) => {
     return <PreviewElement key={item.sid} element={item} />;
