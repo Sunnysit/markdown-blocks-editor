@@ -15,6 +15,7 @@ toast.configure({
 
 //For Google Analytics
 ReactGA.initialize('UA-121232788-4');
+ReactGA.pageview('/home');
 
 function App() {
   return (
