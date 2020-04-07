@@ -1,5 +1,14 @@
 export const APP_INTRODUCTION = [
   {
+    type: 'img',
+    sid: 'rgD14YISR',
+    data: {
+      alt: 'Markdown Blocks Editor logo',
+      value:
+        'https://raw.githubusercontent.com/Sunnysit/markdown-blocks-editor/master/public/assets/img/MBE-logo250.png',
+    },
+  },
+  {
     type: 'heading',
     sid: 'zasAtvkC8',
     data: { value: 'Markdown Blocks Editor', level: 1 },
