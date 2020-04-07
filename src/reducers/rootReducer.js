@@ -1,4 +1,4 @@
-import { APP_INTRODUCTION } from '../assets/introductionInfo';
+import { APP_INTRODUCTION } from '../data/introductionInfo';
 
 const initState = {
   currentDisplayMode: 'edit',

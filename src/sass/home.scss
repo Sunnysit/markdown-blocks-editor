@@ -148,8 +148,12 @@
   =============================================*/
 .footer {
   text-align: center;
-  background-color: $background-color;
-  color: black;
+  background-color: $primary-color;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
 
   .description {
     margin: 0.3rem;
@@ -158,10 +162,19 @@
 
   .sunny-link {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
     &:hover {
       color: $accent-color;
+    }
+  }
+
+  .github-link {
+    color: white;
+    text-decoration: none;
+    span {
+      font-size: 0.8rem;
+      margin-left: 0.2rem;
     }
   }
 }
@@ -177,6 +190,10 @@
     .header-title {
       display: none;
     }
+  }
+
+  .footer {
+    flex-direction: column;
   }
 }
 
