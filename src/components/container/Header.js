@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from '../../assets/img/MBE-logo.svg';
 import { NavLink } from 'react-router-dom';
+import { GITHUB_LINK } from '../../data/baseSetting';
 
 //Font Awesome style
 import { faHome, faEdit, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
@@ -31,12 +33,18 @@ const Header = () => {
                 <span>Editor</span>
               </NavLink>
             </li>
-            {/* <li>
+            <li>
               <NavLink className='nav-btn' to='/about'>
                 <FontAwesomeIcon icon={faBook} />
                 <span>About</span>
               </NavLink>
-            </li> */}
+            </li>
+            <li>
+              <a className='nav-btn' target='blank' href={`${GITHUB_LINK}`}>
+                <FontAwesomeIcon icon={faGithub} />
+                <span>Github</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </div>

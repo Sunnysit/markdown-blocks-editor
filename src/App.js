@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -11,6 +12,9 @@ import Main from './components/container/Main';
 toast.configure({
   autoClose: 4000,
 });
+
+//For Google Analytics
+ReactGA.initialize('UA-121232788-4');
 
 function App() {
   return (
