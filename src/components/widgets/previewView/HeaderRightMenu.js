@@ -5,8 +5,6 @@ import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTrashAlt, faSave } from '@fortawesome/free-solid-svg-icons';
 
-import logo from '../../../assets/img/MBE-logo.svg';
-
 const HeaderRightMenu = () => {
   const markdownList = useSelector((state) => state.markdownList);
   const dispatch = useDispatch();
@@ -70,7 +68,11 @@ const HeaderRightMenu = () => {
         </li>
         <li>
           <NavLink to='/'>
-            <img className='logo' src={logo} alt='MBE logo' />
+            <img
+              className='logo'
+              src={process.env.PUBLIC_URL + '/assets/img/MBE-logo.svg'}
+              alt='MBE logo'
+            />
           </NavLink>
         </li>
       </ul>
