@@ -24,32 +24,6 @@ const Header = () => {
 
       <div className='header-right'>
         <nav>
-          {/* <ul className='nav'>
-            <li>
-              <NavLink className='nav-btn' to='/'>
-                <FontAwesomeIcon icon={faHome} />
-                <span>Home</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className='nav-btn' to='/editor'>
-                <FontAwesomeIcon icon={faEdit} />
-                <span>Editor</span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className='nav-btn' to='/about'>
-                <FontAwesomeIcon icon={faBook} />
-                <span>About</span>
-              </NavLink>
-            </li>
-            <li>
-              <a className='nav-btn' target='blank' href={`${GITHUB_LINK}`}>
-                <FontAwesomeIcon icon={faGithub} />
-                <span>Github</span>
-              </a>
-            </li>
-          </ul> */}
           <Menu right>
             <NavLink className='nav-btn' to='/'>
               <FontAwesomeIcon icon={faHome} />
@@ -59,10 +33,10 @@ const Header = () => {
               <FontAwesomeIcon icon={faEdit} />
               <span>Editor</span>
             </NavLink>
-            <NavLink className='nav-btn' to='/about'>
+            {/* <NavLink className='nav-btn' to='/about'>
               <FontAwesomeIcon icon={faBook} />
               <span>About</span>
-            </NavLink>
+            </NavLink> */}
             <a className='nav-btn' target='blank' href={`${GITHUB_LINK}`}>
               <FontAwesomeIcon icon={faGithub} />
               <span>Github</span>
